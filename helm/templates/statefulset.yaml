@@ -27,17 +27,17 @@ spec:
           imagePullPolicy: Always
           env:
             - name: USER
-              value: "Anonymous"
+              value: "{{ .Values.folding.user }}"
             - name: TEAM
-              value: "0"
+              value: "{{ .Values.folding.team }}"
             - name: PASSKEY
               valueFrom:
                 secretKeyRef:
                   name: {{ .Chart.Name }}
-                  key: passkey
+                  key: {{ .Values.folding.passkey }}
                   optional: true
             - name: POWER
-              value: "light"
+              value: "{{ .Values.folding.power }}"
           volumeMounts:
             - mountPath: /home/folding
               name: data-volume
