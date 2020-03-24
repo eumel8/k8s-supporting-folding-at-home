@@ -1,0 +1,14 @@
+{{ range $fahcount := until (.Values.foldingReplicaCount|int) -}}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $.Values.name }}-{{ $fahcount }}
+spec:
+  selector:
+    statefulset.kubernetes.io/pod-name: {{ $.Values.name  }}-{{ $fahcount }}
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 7396
+{{ end -}}

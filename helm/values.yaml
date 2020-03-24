@@ -4,6 +4,7 @@
 
 image:
   repository: wind0r/folding-at-home
+  version: latest
   pullPolicy: Always
 
 imagePullSecrets: []
@@ -30,7 +31,12 @@ folding:
   user: "Anonymous"
   team: "0"
   passkey: "" # (get one here: https://apps.foldingathome.org/getpasskey)
-  power: "medium" # light/medium/full
+  power: "full" # light/medium/full
+
+foldingReplicaCount: 3
+foldingDNStarget: clustername.example.com
+foldingDomain: example.com
+name: folding-at-home
 
 resources:
   {}
