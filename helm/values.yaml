@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 image:
-  repository: wind0r/folding-at-home
+  repository: mtr.external.otc.telekomcloud.com/eumel8/folding-at-home
   version: latest
   pullPolicy: Always
 
@@ -28,13 +28,13 @@ securityContext:
   runAsUser: 1000
 
 folding:
-  user: "Anonymous"
-  team: "0"
+  user: ""
+  team: ""
   passkey: "" # (get one here: https://apps.foldingathome.org/getpasskey)
-  power: "full" # light/medium/full
+  power: "" # light/medium/full
 
-foldingReplicaCount: 3
-foldingDNStarget: clustername.example.com
+foldingReplicaCount: 1
+foldingDNStarget: mycluster.example.com
 foldingDomain: example.com
 name: folding-at-home
 
