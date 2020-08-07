@@ -18,5 +18,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           dockerfile: Dockerfile
           registry: mtr.external.otc.telekomcloud.com
-          repository: 
+          repository: eumel8/folding-at-home
           tags: latest
