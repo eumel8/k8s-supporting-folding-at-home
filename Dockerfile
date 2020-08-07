@@ -2,7 +2,7 @@ FROM debian:buster-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && \
+RUN apt-get update && apt-get -y upgrade \
     apt-get install -y --no-install-recommends curl bzip2 ca-certificates && \
     curl -o /tmp/fah.tar.bz2 https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.5/fahclient_7.5.1-64bit-release.tar.bz2 && \
     tar --wildcards --to-stdout -xvf /tmp/fah.tar.bz2 "*/FAHClient" >> /bin/FAHClient && \
